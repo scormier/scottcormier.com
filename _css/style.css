@@ -254,9 +254,6 @@ p {
 			}
 			#main article blockquote {
 				background: url("http://static.tumblr.com/0vhitxf/JeOlfpi8b/ico-quote-open.png") no-repeat left top;
-				-moz-box-sizing: border-box;
-				-webkit-box-sizing: border-box;
-				box-sizing: border-box;
 				float: left;
 				margin: 15px 0;
 				padding: 5px 30px;
