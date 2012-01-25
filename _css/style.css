@@ -96,9 +96,8 @@ h1 {
 h2 {
 	font-family: proxima-nova-1,proxima-nova-2,Helvetica,Arial,sans-serif;
 	font-size: 153.9%;
-	font-weight: 300;
-	line-height: 1;
-	margin: 0 45px 5px 0;
+	line-height: 160%;
+	margin: 0 0 5px;
 }
 h4 {
 	font-family: proxima-nova-1,proxima-nova-2,Helvetica,Arial,sans-serif;
@@ -108,6 +107,7 @@ h4 {
 }
 p {
 	font-size: 108%;
+	line-height: 160%;
 	margin: 0 0 5px;
 }
 
@@ -283,7 +283,7 @@ p {
 				display: block;
 				font-size: 100%;
 				line-height: 1;
-				margin: 0 0 10px;
+				margin: 0 0 20px;
 				width: auto;
 			}
 			#main article .day,
@@ -292,7 +292,7 @@ p {
 				font-weight: bold;
 			}
 			#main article .type {
-				display: block;
+				display: none;
 		    height: 32px;
 		    position: absolute;
 				right: 0;
