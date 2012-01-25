@@ -96,6 +96,7 @@ h1 {
 h2 {
 	font-family: proxima-nova-1,proxima-nova-2,Helvetica,Arial,sans-serif;
 	font-size: 153.9%;
+	font-weight: 300;
 	line-height: 160%;
 	margin: 0 0 5px;
 }
