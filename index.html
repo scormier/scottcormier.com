@@ -5,668 +5,669 @@
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
-	<meta charset="utf-8"/>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>{Title}{block:SearchPage}, {lang:Search results for SearchQuery}{/block:SearchPage}{block:PostSummary}, {PostSummary}{/block:PostSummary}</title>
+  <title>{Title}{block:SearchPage}, {lang:Search results for SearchQuery}{/block:SearchPage}{block:PostSummary}, {PostSummary}{/block:PostSummary}
+  </title>
 
-	<meta name="text:Facebook Link" content="" />
-	<meta name="text:Twitter Link" content="" />
-	<meta name="text:Lastfm Link" content="" />
-	<meta name="if:Show Tags" content="1" />
-	<meta name="if:Show Album Art on Audio Posts" content="1" />
-	<meta name="if:Enable Jump Pagination" content="0" />
-	<meta name="text:Disqus Shortname" content="" />
-	<meta name="text:Google Analytics UA Code" content="" />
-	<meta name="image:Header" content="" />
-	<meta name="image:Background" content="http://static.tumblr.com/0vhitxf/F4mlfpjf8/bg.png" />
+  <meta name="text:Facebook Link" content="" />
+  <meta name="text:Twitter Link" content="" />
+  <meta name="text:Lastfm Link" content="" />
+  <meta name="if:Show Tags" content="1" />
+  <meta name="if:Show Album Art on Audio Posts" content="1" />
+  <meta name="if:Enable Jump Pagination" content="0" />
+  <meta name="text:Disqus Shortname" content="" />
+  <meta name="text:Google Analytics UA Code" content="" />
+  <meta name="image:Header" content="" />
+  <meta name="image:Background" content="http://static.tumblr.com/0vhitxf/F4mlfpjf8/bg.png" />
 
-	{block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+  {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
 
-	<meta name="author" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	<link rel="shortcut icon" href="{Favicon}">
-	<link rel="apple-touch-icon" href="{PortraitURL-128}">
-	<link rel="alternate" type="application/rss+xml" href="{RSS}">
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="apple-touch-icon" href="{PortraitURL-128}">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
-	<!--
-	<link rel="stylesheet" href="http://scottcormier.com/_css/style.css?v=2">
-	-->
-	<link rel="stylesheet" href="http://static.tumblr.com/qhhlwkc/2p3lgw1iy/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
-	<style type="text/css">{CustomCSS}</style>
-	<script src="http://static.tumblr.com/0vhitxf/kIvlfrwhh/modernizr-1.6.min.js"></script>
-	<script type="text/javascript" src="http://use.typekit.com/cpr7cwp.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <!--
+  <link rel="stylesheet" href="http://scottcormier.com/_css/style.css?v=2">
+  -->
+  <link rel="stylesheet" href="http://static.tumblr.com/qhhlwkc/2p3lgw1iy/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+  <style type="text/css">{CustomCSS}</style>
+  <script src="http://static.tumblr.com/0vhitxf/kIvlfrwhh/modernizr-1.6.min.js"></script>
+  <script type="text/javascript" src="http://use.typekit.com/cpr7cwp.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  {block:IfGoogleAnalyticsUACode}
+  <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
+       change the UA-XXXXX-X to be your site's ID -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', '{text:Google Analytics UA Code}', 'scottcormier.com');
+        ga('send', 'pageview');
+    </script>
+  {/block:IfGoogleAnalyticsUACode}
 </head>
 <body>
-	<header id="masthead">
-		<h1>I'm <a href="/">Scott Cormier</a>, <span id="tagline">an interface designer</span>.</h1>
-		<div class="title">I'm <a href="/">Scott Cormier</a>, <span id="tagline2">an interface designer</span>.</div>
-		<nav>
-			<ul>
-				<li><a href="/" title="Home">Home</a></li>
-				{block:AskEnabled}
-				<li><a href="/ask" title="Ask me a question">Ask a Question</a></li>
-				{/block:AskEnabled}
-				{block:SubmissionsEnabled}
-				<li><a href="/submit" title="Submit content"></a></li>
-				{/block:SubmissionsEnabled}
-				{block:Pages}
-				<li><a href="{URL}" title="{Label}">{Label}</a></li>
-				{/block:Pages}
-			</ul>
-		</nav>
-	</header>
-	<div id="container">
-		<div id="main">
-			<div class="wrapper">
+  <header id="masthead">
+    <h1>I'm <a href="/">Scott Cormier</a>, <span id="tagline">an interface designer</span>.</h1>
+    <div class="title">I'm <a href="/">Scott Cormier</a>, <span id="tagline2">an interface designer</span>.</div>
+    <nav>
+      <ul>
+        <li><a href="/" title="Home">Home</a></li>
+        {block:AskEnabled}
+        <li><a href="/ask" title="Ask me a question">Ask a Question</a></li>
+        {/block:AskEnabled}
+        {block:SubmissionsEnabled}
+        <li><a href="/submit" title="Submit content"></a></li>
+        {/block:SubmissionsEnabled}
+        {block:Pages}
+        <li><a href="{URL}" title="{Label}">{Label}</a></li>
+        {/block:Pages}
+      </ul>
+    </nav>
+  </header>
+  <div id="container">
+    <div id="main">
+      <div class="wrapper">
 
-				{block:SearchPage}
-				{block:SearchResults}
-				<div id="search-info">
-					{lang:Your search for SearchQuery returned SearchResultCount results 2}
-					<a href="/">Clear Results</a>
-				</div>
-				{/block:SearchResults}
-				{block:NoSearchResults}
-				{lang:No search results for SearchQuery 2}
-				{/block:NoSearchResults}
-				{/block:SearchPage}
+        {block:SearchPage}
+        {block:SearchResults}
+        <div id="search-info">
+          {lang:Your search for SearchQuery returned SearchResultCount results 2}
+          <a href="/">Clear Results</a>
+        </div>
+        {/block:SearchResults}
+        {block:NoSearchResults}
+        {lang:No search results for SearchQuery 2}
+        {/block:NoSearchResults}
+        {/block:SearchPage}
 
-				{block:DayPage}
-				{lang:Viewing everything posted on Month DayOfMonth Year}				
-				{/block:DayPage}
+        {block:DayPage}
+        {lang:Viewing everything posted on Month DayOfMonth Year}       
+        {/block:DayPage}
 
-				{block:Posts}
-				
-				{block:Text}
-				<article class="text">
-					<header>
-						<h2>
-							{block:Title}
-							<a href="{Permalink}">{Title}</a>
-							{/block:Title}
-						</h2>
-						<div class="type">
-							<a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/kC6lfrzo9/ico-text.png" alt="Text post icon" /></a>
-						</div>
-						{block:Date}
-						<div class="date">
-							<span class="day">{DayOfMonth}</span> 
-							<span class="month">{ShortMonth}</span> 
-							<span class="year">{Year}</span>
-						</div>
-						{/block:Date}
-					</header>
-					{Body}
-					<footer>
-						{block:HasTags}
-						<div class="tags">
-							{block:Tags}
-							<a href="{TagURLChrono}">{Tag}</a>
-							{block:Tags}
-						</div>
-						{/block:HasTags}
-						<div class="meta">
-							{block:NoteCount}
-							<div class="notes">
-								<a href="#notes" title="Notes">{NoteCount}</a>
-							</div>
-							{/block:NoteCount}
-							{block:IfDisqusShortname}
-							<div class="comments">
-								<a href="{Permalink}#disqus_thread" class="dsq-comment-count"></a>
-							</div>
-							{/block:IfDisqusShortname}
-						</div>
-					</footer>
-				</article>
-				{block:PostNotes}
-				<div id="notes">
-					{PostNotes}
-				</div>
-				{/block:PostNotes}
-				{/block:Text}
-				
-				{block:Photo}
-				<article class="photo">
-					<header>
-						<div class="type">
-							<a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/Xhzlfs1az/ico-photo.png" alt="Photo post icon" /></a>
-						</div>
-						{block:Date}
-						<div class="date">
-							<span class="day">{DayOfMonth}</span> 
-							<span class="month">{ShortMonth}</span> 
-							<span class="year">{Year}</span>
-						</div>
-						{/block:Date}
-					</header>
-					<div class="img">
-						<a class="lightbox" href="{PhotoURL-500}" title="{PhotoAlt}">
-							<img src="{PhotoURL-500}" alt="{PhotoAlt}" />
-						</a>
-					</div>
-					{block:Caption}
-					{Caption}
-					{/block:Caption}
-					<footer>
-						{block:HasTags}
-						<div class="tags">
-							{block:Tags}
-							<a href="{TagURLChrono}">{Tag}</a>
-							{block:Tags}
-						</div>
-						{/block:HasTags}
-						<div class="meta">
-							{block:NoteCount}
-							<div class="notes">
-								<a href="#" title="Notes">{NoteCount}</a>
-							</div>
-							{/block:NoteCount}
-							{block:IfDisqusShortname}
-							<div class="comments">
-								<a href="{Permalink}#disqus_thread" class="dsq-comment-count" title="Comments"></a>
-							</div>
-							{/block:IfDisqusShortname}
-						</div>
-					</footer>
-				</article>
-				{block:PostNotes}
-				<div id="notes">
-					{PostNotes}
-				</div>
-				{/block:PostNotes}
-				{/block:Photo}
+        {block:Posts}
+        
+        {block:Text}
+        <article class="text">
+          <header>
+            <h2>
+              {block:Title}
+              <a href="{Permalink}">{Title}</a>
+              {/block:Title}
+            </h2>
+            <div class="type">
+              <a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/kC6lfrzo9/ico-text.png" alt="Text post icon" /></a>
+            </div>
+            {block:Date}
+            <div class="date">
+              <span class="day">{DayOfMonth}</span> 
+              <span class="month">{ShortMonth}</span> 
+              <span class="year">{Year}</span>
+            </div>
+            {/block:Date}
+          </header>
+          {Body}
+          <footer>
+            {block:HasTags}
+            <div class="tags">
+              {block:Tags}
+              <a href="{TagURLChrono}">{Tag}</a>
+              {block:Tags}
+            </div>
+            {/block:HasTags}
+            <div class="meta">
+              {block:NoteCount}
+              <div class="notes">
+                <a href="#notes" title="Notes">{NoteCount}</a>
+              </div>
+              {/block:NoteCount}
+              {block:IfDisqusShortname}
+              <div class="comments">
+                <a href="{Permalink}#disqus_thread" class="dsq-comment-count"></a>
+              </div>
+              {/block:IfDisqusShortname}
+            </div>
+          </footer>
+        </article>
+        {block:PostNotes}
+        <div id="notes">
+          {PostNotes}
+        </div>
+        {/block:PostNotes}
+        {/block:Text}
+        
+        {block:Photo}
+        <article class="photo">
+          <header>
+            <div class="type">
+              <a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/Xhzlfs1az/ico-photo.png" alt="Photo post icon" /></a>
+            </div>
+            {block:Date}
+            <div class="date">
+              <span class="day">{DayOfMonth}</span> 
+              <span class="month">{ShortMonth}</span> 
+              <span class="year">{Year}</span>
+            </div>
+            {/block:Date}
+          </header>
+          <div class="img">
+            <a class="lightbox" href="{PhotoURL-500}" title="{PhotoAlt}">
+              <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+            </a>
+          </div>
+          {block:Caption}
+          {Caption}
+          {/block:Caption}
+          <footer>
+            {block:HasTags}
+            <div class="tags">
+              {block:Tags}
+              <a href="{TagURLChrono}">{Tag}</a>
+              {block:Tags}
+            </div>
+            {/block:HasTags}
+            <div class="meta">
+              {block:NoteCount}
+              <div class="notes">
+                <a href="#" title="Notes">{NoteCount}</a>
+              </div>
+              {/block:NoteCount}
+              {block:IfDisqusShortname}
+              <div class="comments">
+                <a href="{Permalink}#disqus_thread" class="dsq-comment-count" title="Comments"></a>
+              </div>
+              {/block:IfDisqusShortname}
+            </div>
+          </footer>
+        </article>
+        {block:PostNotes}
+        <div id="notes">
+          {PostNotes}
+        </div>
+        {/block:PostNotes}
+        {/block:Photo}
 
-				{block:Photoset}
-				<article class="photoset">
-					<header>
-						<div class="type">
-							<a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/wH2lfs1bx/ico-photoset.png" alt="Photoset post icon" /></a>
-						</div>
-						{block:Date}
-						<div class="date">
-							<span class="day">{DayOfMonth}</span> 
-							<span class="month">{ShortMonth}</span> 
-							<span class="year">{Year}</span>
-						</div>
-						{/block:Date}
-					</header>
-					<div class="img-set">
-						{Photoset-500}
-					</div>
-					{block:Caption}
-					{Caption}
-					{/block:Caption}
-					<footer>
-						{block:HasTags}
-						<div class="tags">
-							{block:Tags}
-							<a href="{TagURLChrono}">{Tag}</a>
-							{block:Tags}
-						</div>
-						{/block:HasTags}
-						<div class="meta">
-							{block:NoteCount}
-							<div class="notes">
-								<a href="#" title="Notes">{NoteCount}</a>
-							</div>
-							{/block:NoteCount}
-							{block:IfDisqusShortname}
-							<div class="comments">
-								<a href="{Permalink}#disqus_thread" class="dsq-comment-count" title="Comments"></a>
-							</div>
-							{/block:IfDisqusShortname}
-						</div>
-					</footer>
-				</article>
-				{block:PostNotes}
-				<div id="notes">
-					{PostNotes}
-				</div>
-				{/block:PostNotes}
-				{/block:Photoset}
+        {block:Photoset}
+        <article class="photoset">
+          <header>
+            <div class="type">
+              <a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/wH2lfs1bx/ico-photoset.png" alt="Photoset post icon" /></a>
+            </div>
+            {block:Date}
+            <div class="date">
+              <span class="day">{DayOfMonth}</span> 
+              <span class="month">{ShortMonth}</span> 
+              <span class="year">{Year}</span>
+            </div>
+            {/block:Date}
+          </header>
+          <div class="img-set">
+            {Photoset-500}
+          </div>
+          {block:Caption}
+          {Caption}
+          {/block:Caption}
+          <footer>
+            {block:HasTags}
+            <div class="tags">
+              {block:Tags}
+              <a href="{TagURLChrono}">{Tag}</a>
+              {block:Tags}
+            </div>
+            {/block:HasTags}
+            <div class="meta">
+              {block:NoteCount}
+              <div class="notes">
+                <a href="#" title="Notes">{NoteCount}</a>
+              </div>
+              {/block:NoteCount}
+              {block:IfDisqusShortname}
+              <div class="comments">
+                <a href="{Permalink}#disqus_thread" class="dsq-comment-count" title="Comments"></a>
+              </div>
+              {/block:IfDisqusShortname}
+            </div>
+          </footer>
+        </article>
+        {block:PostNotes}
+        <div id="notes">
+          {PostNotes}
+        </div>
+        {/block:PostNotes}
+        {/block:Photoset}
 
-				{block:Quote}
-				<article class="quote">
-					<header>
-						<div class="type">
-							<a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/vPclfsjzc/ico-quote.png" alt="Quote post icon" /></a>
-						</div>
-						{block:Date}
-						<div class="date">
-							<span class="day">{DayOfMonth}</span> 
-							<span class="month">{ShortMonth}</span> 
-							<span class="year">{Year}</span>
-						</div>
-						{/block:Date}
-					</header>
-					<blockquote>{Quote}</blockquote>
-					{block:Source}
-					{Source}
-					{/block:Source}
-					<footer>
-						{block:HasTags}
-						<div class="tags">
-							{block:Tags}
-							<a href="{TagURLChrono}">{Tag}</a>
-							{block:Tags}
-						</div>
-						{/block:HasTags}
-						<div class="meta">
-							{block:NoteCount}
-							<div class="notes">
-								<a href="#" title="Notes">{NoteCount}</a>
-							</div>
-							{/block:NoteCount}
-							{block:IfDisqusShortname}
-							<div class="comments">
-								<a href="{Permalink}#disqus_thread" class="dsq-comment-count" title="Comments"></a>
-							</div>
-							{/block:IfDisqusShortname}
-						</div>
-					</footer>
-				</article>
-				{block:PostNotes}
-				<div id="notes">
-					{PostNotes}
-				</div>
-				{/block:PostNotes}
-				{/block:Quote}
+        {block:Quote}
+        <article class="quote">
+          <header>
+            <div class="type">
+              <a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/vPclfsjzc/ico-quote.png" alt="Quote post icon" /></a>
+            </div>
+            {block:Date}
+            <div class="date">
+              <span class="day">{DayOfMonth}</span> 
+              <span class="month">{ShortMonth}</span> 
+              <span class="year">{Year}</span>
+            </div>
+            {/block:Date}
+          </header>
+          <blockquote>{Quote}</blockquote>
+          {block:Source}
+          {Source}
+          {/block:Source}
+          <footer>
+            {block:HasTags}
+            <div class="tags">
+              {block:Tags}
+              <a href="{TagURLChrono}">{Tag}</a>
+              {block:Tags}
+            </div>
+            {/block:HasTags}
+            <div class="meta">
+              {block:NoteCount}
+              <div class="notes">
+                <a href="#" title="Notes">{NoteCount}</a>
+              </div>
+              {/block:NoteCount}
+              {block:IfDisqusShortname}
+              <div class="comments">
+                <a href="{Permalink}#disqus_thread" class="dsq-comment-count" title="Comments"></a>
+              </div>
+              {/block:IfDisqusShortname}
+            </div>
+          </footer>
+        </article>
+        {block:PostNotes}
+        <div id="notes">
+          {PostNotes}
+        </div>
+        {/block:PostNotes}
+        {/block:Quote}
 
-				{block:Link}
-				<article class="link">
-					<header>
-						<h2>
-							<a href="{URL}" {Target}>{Name}</a>
-						</h2>
-						<div class="type">
-							<a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/gXUlfshgv/ico-link.png" alt="Link post icon" /></a>
-						</div>
-						{block:Date}
-						<div class="date">
-							<span class="day">{DayOfMonth}</span> 
-							<span class="month">{ShortMonth}</span> 
-							<span class="year">{Year}</span>
-						</div>
-						{/block:Date}
-					</header>
-					{block:Description}
-					{Description}
-					{block:Description}
-					<footer>
-						{block:HasTags}
-						<div class="tags">
-							{block:Tags}
-							<a href="{TagURLChrono}">{Tag}</a>
-							{block:Tags}
-						</div>
-						{/block:HasTags}
-						<div class="meta">
-							{block:NoteCount}
-							<div class="notes">
-								<a href="#" title="Notes">{NoteCount}</a>
-							</div>
-							{/block:NoteCount}
-							{block:IfDisqusShortname}
-							<div class="comments">
-								<a href="{Permalink}#disqus_thread" class="dsq-comment-count" title="Comments"></a>
-							</div>
-							{/block:IfDisqusShortname}
-						</div>
-					</footer>
-				</article>
-				{block:PostNotes}
-				<div id="notes">
-					{PostNotes}
-				</div>
-				{/block:PostNotes}
-				{/block:Link}
+        {block:Link}
+        <article class="link">
+          <header>
+            <h2>
+              <a href="{URL}" {Target}>{Name}</a>
+            </h2>
+            <div class="type">
+              <a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/gXUlfshgv/ico-link.png" alt="Link post icon" /></a>
+            </div>
+            {block:Date}
+            <div class="date">
+              <span class="day">{DayOfMonth}</span> 
+              <span class="month">{ShortMonth}</span> 
+              <span class="year">{Year}</span>
+            </div>
+            {/block:Date}
+          </header>
+          {block:Description}
+          {Description}
+          {block:Description}
+          <footer>
+            {block:HasTags}
+            <div class="tags">
+              {block:Tags}
+              <a href="{TagURLChrono}">{Tag}</a>
+              {block:Tags}
+            </div>
+            {/block:HasTags}
+            <div class="meta">
+              {block:NoteCount}
+              <div class="notes">
+                <a href="#" title="Notes">{NoteCount}</a>
+              </div>
+              {/block:NoteCount}
+              {block:IfDisqusShortname}
+              <div class="comments">
+                <a href="{Permalink}#disqus_thread" class="dsq-comment-count" title="Comments"></a>
+              </div>
+              {/block:IfDisqusShortname}
+            </div>
+          </footer>
+        </article>
+        {block:PostNotes}
+        <div id="notes">
+          {PostNotes}
+        </div>
+        {/block:PostNotes}
+        {/block:Link}
 
-				{block:Chat}
-				<article class="chat">
-					<header>
-						{block:Title}
-						<h2>
-							<a href="{Permalink}">{Title}</a>
-						</h2>
-						{/block:Title}
-						<div class="type">
-							<a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/ZzUlfshft/ico-chat.png" alt="Chat post icon" /></a>
-						</div>
-						{block:Date}
-						<div class="date">
-							<span class="day">{DayOfMonth}</span> 
-							<span class="month">{ShortMonth}</span> 
-							<span class="year">{Year}</span>
-						</div>
-						{/block:Date}
-					</header>
-					<ul class="chat">
-						{block:Lines}
-						<li class="{Alt} user_{UserNumber}">
-							<strong>{block:Label}{Label}{/block:Label}</strong> {Line}
-						</li>
-						{/block:Lines}
-					</ul>
-					<footer>
-						{block:HasTags}
-						<div class="tags">
-							{block:Tags}
-							<a href="{TagURLChrono}">{Tag}</a>
-							{block:Tags}
-						</div>
-						{/block:HasTags}
-						<div class="meta">
-							{block:NoteCount}
-							<div class="notes">
-								<a href="#" title="Notes">{NoteCount}</a>
-							</div>
-							{/block:NoteCount}
-							{block:IfDisqusShortname}
-							<div class="comments">
-								<a href="{Permalink}#disqus_thread" class="dsq-comment-count" title="Comments"></a>
-							</div>
-							{/block:IfDisqusShortname}
-						</div>
-					</footer>
-				</article>
-				{block:PostNotes}
-				<div id="notes">
-					{PostNotes}
-				</div>
-				{/block:PostNotes}
-				{/block:Chat}
+        {block:Chat}
+        <article class="chat">
+          <header>
+            {block:Title}
+            <h2>
+              <a href="{Permalink}">{Title}</a>
+            </h2>
+            {/block:Title}
+            <div class="type">
+              <a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/ZzUlfshft/ico-chat.png" alt="Chat post icon" /></a>
+            </div>
+            {block:Date}
+            <div class="date">
+              <span class="day">{DayOfMonth}</span> 
+              <span class="month">{ShortMonth}</span> 
+              <span class="year">{Year}</span>
+            </div>
+            {/block:Date}
+          </header>
+          <ul class="chat">
+            {block:Lines}
+            <li class="{Alt} user_{UserNumber}">
+              <strong>{block:Label}{Label}{/block:Label}</strong> {Line}
+            </li>
+            {/block:Lines}
+          </ul>
+          <footer>
+            {block:HasTags}
+            <div class="tags">
+              {block:Tags}
+              <a href="{TagURLChrono}">{Tag}</a>
+              {block:Tags}
+            </div>
+            {/block:HasTags}
+            <div class="meta">
+              {block:NoteCount}
+              <div class="notes">
+                <a href="#" title="Notes">{NoteCount}</a>
+              </div>
+              {/block:NoteCount}
+              {block:IfDisqusShortname}
+              <div class="comments">
+                <a href="{Permalink}#disqus_thread" class="dsq-comment-count" title="Comments"></a>
+              </div>
+              {/block:IfDisqusShortname}
+            </div>
+          </footer>
+        </article>
+        {block:PostNotes}
+        <div id="notes">
+          {PostNotes}
+        </div>
+        {/block:PostNotes}
+        {/block:Chat}
 
-				{block:Video}
-				<article class="video">
-					<header>
-						<div class="type">
-							<a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/c5mlfsheu/ico-video.png" alt="Video post icon" /></a>
-						</div>
-						{block:Date}
-						<div class="date">
-							<span class="day">{DayOfMonth}</span> 
-							<span class="month">{ShortMonth}</span> 
-							<span class="year">{Year}</span>
-						</div>
-						{/block:Date}
-					</header>
-					<div class="vid">
-					{Video-500}
-					</div>
-					{block:Caption}
-					{Caption}
-					{/block:Caption}
-					<footer>
-						{block:HasTags}
-						<div class="tags">
-							{block:Tags}
-							<a href="{TagURLChrono}">{Tag}</a>
-							{block:Tags}
-						</div>
-						{/block:HasTags}
-						<div class="meta">
-							{block:NoteCount}
-							<div class="notes">
-								<a href="#" title="Notes">{NoteCount}</a>
-							</div>
-							{/block:NoteCount}
-							{block:IfDisqusShortname}
-							<div class="comments">
-								<a href="{Permalink}#disqus_thread" class="dsq-comment-count" title="Comments"></a>
-							</div>
-							{/block:IfDisqusShortname}
-						</div>
-					</footer>
-				</article>
-				{block:PostNotes}
-				<div id="notes">
-					{PostNotes}
-				</div>
-				{/block:PostNotes}
-				{/block:Video}
+        {block:Video}
+        <article class="video">
+          <header>
+            <div class="type">
+              <a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/c5mlfsheu/ico-video.png" alt="Video post icon" /></a>
+            </div>
+            {block:Date}
+            <div class="date">
+              <span class="day">{DayOfMonth}</span> 
+              <span class="month">{ShortMonth}</span> 
+              <span class="year">{Year}</span>
+            </div>
+            {/block:Date}
+          </header>
+          <div class="vid">
+          {Video-500}
+          </div>
+          {block:Caption}
+          {Caption}
+          {/block:Caption}
+          <footer>
+            {block:HasTags}
+            <div class="tags">
+              {block:Tags}
+              <a href="{TagURLChrono}">{Tag}</a>
+              {block:Tags}
+            </div>
+            {/block:HasTags}
+            <div class="meta">
+              {block:NoteCount}
+              <div class="notes">
+                <a href="#" title="Notes">{NoteCount}</a>
+              </div>
+              {/block:NoteCount}
+              {block:IfDisqusShortname}
+              <div class="comments">
+                <a href="{Permalink}#disqus_thread" class="dsq-comment-count" title="Comments"></a>
+              </div>
+              {/block:IfDisqusShortname}
+            </div>
+          </footer>
+        </article>
+        {block:PostNotes}
+        <div id="notes">
+          {PostNotes}
+        </div>
+        {/block:PostNotes}
+        {/block:Video}
 
-				{block:Audio}
-				<article class="audio">
-					<header>
-						<h2><a href="{Permalink}">{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}</a></h2>
-						{block:Album}<h4>{Album}</h4>{/block:Album}
-						<div class="type">
-							<a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/VhYlfshds/ico-audio.png" alt="Audio post icon" /></a>
-						</div>
-						{block:Date}
-						<div class="date">
-							<span class="day">{DayOfMonth}</span> 
-							<span class="month">{ShortMonth}</span> 
-							<span class="year">{Year}</span>
-						</div>
-						{/block:Date}
-					</header>
-					{AudioPlayerBlack}
-					{RawAudioURL}		
-					{block:Caption}
-					{Caption}
-					{/block:Caption}
-					<footer>
-						{block:HasTags}
-						<div class="tags">
-							{block:Tags}
-							<a href="{TagURLChrono}">{Tag}</a>
-							{block:Tags}
-						</div>
-						{/block:HasTags}
-						<div class="meta">
-							{block:NoteCount}
-							<div class="notes">
-								<a href="#" title="Notes">{NoteCount}</a>
-							</div>
-							{/block:NoteCount}
-							{block:IfDisqusShortname}
-							<div class="comments">
-								<a href="{Permalink}#disqus_thread" class="dsq-comment-count" title="Comments"></a>
-							</div>
-							{/block:IfDisqusShortname}
-						</div>
-					</footer>
-				</article>
-				{block:PostNotes}
-				<div id="notes">
-					{PostNotes}
-				</div>
-				{/block:PostNotes}
-				{/block:Audio}
-				
-				{block:Answer}
-				<article class="answer">
-					<header>
-						<h2><a href="{Permalink}">{Question}</a></h2>
-						<div class="type">
-							<a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/2wdlfsi4w/ico-answer.png" alt="Answer post icon" /></a>
-						</div>
-						{block:Date}
-						<div class="date">
-							<span class="day">{DayOfMonth}</span> 
-							<span class="month">{ShortMonth}</span> 
-							<span class="year">{Year}</span>
-						</div>
-						{/block:Date}
-						<h4 class="asked-by">asked by: <img src="{AskerPortraitURL-16}" class="avatar" alt="Avatar" /> {Asker}</h4>
-					</header>
-					{Answer}
-					<footer>
-						{block:HasTags}
-						<div class="tags">
-							{block:Tags}
-							<a href="{TagURLChrono}">{Tag}</a>
-							{block:Tags}
-						</div>
-						{/block:HasTags}
-						<div class="meta">
-							{block:NoteCount}
-							<div class="notes">
-								<a href="{Permalink}#notes" title="Notes">{NoteCount}</a>
-							</div>
-							{/block:NoteCount}
-							{block:IfDisqusShortname}
-							<div class="comments">
-								<a href="{Permalink}#disqus_thread" class="dsq-comment-count" title="Comments"></a>
-							</div>
-							{/block:IfDisqusShortname}
-						</div>
-					</footer>
-				</article>
-				{block:PostNotes}
-				<div id="notes">
-					{PostNotes}
-				</div>
-				{/block:PostNotes}
-				{/block:Answer}
-				
-				{block:IfDisqusShortname}
-				<script type="text/javascript">
-					var disqus_url = "{Permalink}";
-					var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";
-				</script>
-				{block:Permalink}
-				<div id="disqus_thread"></div>
-				<script type="text/javascript">
-				  /**
-				    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
-				    */
-				  (function() {
-				   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-				   dsq.src = 'http://itemsand.disqus.com/embed.js';
-				   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-				  })();
-				</script>
-				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=itemsand">comments powered by Disqus.</a></noscript>
-				{/block:Permalink}
-				<script type="text/javascript">
-					var disqus_shortname = '{text:Disqus Shortname}';
-					(function () {
-					  var s = document.createElement('script'); s.async = true;
-					  s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-					  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-					}());
-				</script>
-				{/block:IfDisqusShortname}
-				
-				{/block:Posts}
+        {block:Audio}
+        <article class="audio">
+          <header>
+            <h2><a href="{Permalink}">{block:Artist}{Artist} - {/block:Artist}{block:TrackName}{TrackName}{/block:TrackName}</a></h2>
+            {block:Album}<h4>{Album}</h4>{/block:Album}
+            <div class="type">
+              <a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/VhYlfshds/ico-audio.png" alt="Audio post icon" /></a>
+            </div>
+            {block:Date}
+            <div class="date">
+              <span class="day">{DayOfMonth}</span> 
+              <span class="month">{ShortMonth}</span> 
+              <span class="year">{Year}</span>
+            </div>
+            {/block:Date}
+          </header>
+          {AudioPlayerBlack}
+          {RawAudioURL}   
+          {block:Caption}
+          {Caption}
+          {/block:Caption}
+          <footer>
+            {block:HasTags}
+            <div class="tags">
+              {block:Tags}
+              <a href="{TagURLChrono}">{Tag}</a>
+              {block:Tags}
+            </div>
+            {/block:HasTags}
+            <div class="meta">
+              {block:NoteCount}
+              <div class="notes">
+                <a href="#" title="Notes">{NoteCount}</a>
+              </div>
+              {/block:NoteCount}
+              {block:IfDisqusShortname}
+              <div class="comments">
+                <a href="{Permalink}#disqus_thread" class="dsq-comment-count" title="Comments"></a>
+              </div>
+              {/block:IfDisqusShortname}
+            </div>
+          </footer>
+        </article>
+        {block:PostNotes}
+        <div id="notes">
+          {PostNotes}
+        </div>
+        {/block:PostNotes}
+        {/block:Audio}
+        
+        {block:Answer}
+        <article class="answer">
+          <header>
+            <h2><a href="{Permalink}">{Question}</a></h2>
+            <div class="type">
+              <a href="{Permalink}"><img src="http://static.tumblr.com/0vhitxf/2wdlfsi4w/ico-answer.png" alt="Answer post icon" /></a>
+            </div>
+            {block:Date}
+            <div class="date">
+              <span class="day">{DayOfMonth}</span> 
+              <span class="month">{ShortMonth}</span> 
+              <span class="year">{Year}</span>
+            </div>
+            {/block:Date}
+            <h4 class="asked-by">asked by: <img src="{AskerPortraitURL-16}" class="avatar" alt="Avatar" /> {Asker}</h4>
+          </header>
+          {Answer}
+          <footer>
+            {block:HasTags}
+            <div class="tags">
+              {block:Tags}
+              <a href="{TagURLChrono}">{Tag}</a>
+              {block:Tags}
+            </div>
+            {/block:HasTags}
+            <div class="meta">
+              {block:NoteCount}
+              <div class="notes">
+                <a href="{Permalink}#notes" title="Notes">{NoteCount}</a>
+              </div>
+              {/block:NoteCount}
+              {block:IfDisqusShortname}
+              <div class="comments">
+                <a href="{Permalink}#disqus_thread" class="dsq-comment-count" title="Comments"></a>
+              </div>
+              {/block:IfDisqusShortname}
+            </div>
+          </footer>
+        </article>
+        {block:PostNotes}
+        <div id="notes">
+          {PostNotes}
+        </div>
+        {/block:PostNotes}
+        {/block:Answer}
+        
+        {block:IfDisqusShortname}
+        <script type="text/javascript">
+          var disqus_url = "{Permalink}";
+          var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";
+        </script>
+        {block:Permalink}
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          /**
+            * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+            */
+          (function() {
+           var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+           dsq.src = 'http://itemsand.disqus.com/embed.js';
+           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=itemsand">comments powered by Disqus.</a></noscript>
+        {/block:Permalink}
+        <script type="text/javascript">
+          var disqus_shortname = '{text:Disqus Shortname}';
+          (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+          }());
+        </script>
+        {/block:IfDisqusShortname}
+        
+        {/block:Posts}
 
-				{block:RebloggedFrom}
-				<ul class="reblogs">
-					<li>{ReblogRootPortraitURL-24} {ReblogRootName} {ReblogRootTitle}</li>
-				</ul>
-				{/block:RebloggedFrom}
-			</div>
-		</div>
-		<div id="sidebar">
-			<div class="wrapper">
-				<div id="search">
-					<form action="/search" method="get">
-					    <input type="text" name="q" value="{SearchQuery}" placeholder="{lang:Search}..." autofocus />
-					    <input type="submit" value="Search"/>
-					</form>
-				</div>
-				<div id="about">
-					<div class="img">
-						<img src="http://a0.twimg.com/profile_images/857635017/sketch-avatar.jpeg" alt="Profile Image" />
-					</div>
-					<div class="info">
-						I'm the Product UI designer at <a href="http://awarenessnetworks.com" title="Link to Awareness Inc. site">Awareness Inc.</a> where I attempt to make a complex web app easy to use. I'm passionate about web standards, typography, and beautifully simple interfaces.
-					</div>
-					<ul class="services">
-						<li>
-							<a href="{text:Facebook Link}" title="View Facebook Profile">
-								<img class="facebook" src="http://static.tumblr.com/0vhitxf/33Tlfrda2/ico-facebook16.png" alt="Facebook icon" />Facebook
-							</a>
-						</li>
-						<li>
-							<a href="{text:Twitter Link}" title="View Twitter Profile">
-								<img class="twitter" src="http://static.tumblr.com/0vhitxf/nZClfrdb6/ico-twitter16.png" alt="Twitter icon" />Twitter
-							</a>
-						</li>
-						<li>
-							<a href="{text:Lastfm Link}"  title="View Last.fm Profile">
-								<img class="lastfm" src="http://static.tumblr.com/0vhitxf/f9mlfrdam/ico-lastfm16.png" alt="Last.fm icon" />Last.fm
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<footer>
-		{block:Pagination}
-		<div class="pagination">
-			{block:PreviousPage}
-			<a href="{PreviousPage}">&#171; Previous</a>
-			{/block:PreviousPage}
-	        {block:JumpPagination length="5"}
-			{block:CurrentPage}
-			<a class="current_page">{PageNumber}</a>
-			{/block:CurrentPage}
-			{block:JumpPage}
-			<a class="jump_page" href="{URL}">{PageNumber}</a>
-			{/block:JumpPage}
-	        {/block:JumpPagination}
-	        {block:NextPage}
-			<a href="{NextPage}">Next &#187;</a>
-			{/block:NextPage}
-		</div>
-		{/block:Pagination}
-		<p>Design by <a href="http://kwerk.ca" rel="me">Scott Cormier</a>. {lang:Powered by Tumblr 2}.</p>
-		<p>Copyright © 1980-2010</p>		
-	</footer>
+        {block:RebloggedFrom}
+        <ul class="reblogs">
+          <li>{ReblogRootPortraitURL-24} {ReblogRootName} {ReblogRootTitle}</li>
+        </ul>
+        {/block:RebloggedFrom}
+      </div>
+    </div>
+    <div id="sidebar">
+      <div class="wrapper">
+        <div id="search">
+          <form action="/search" method="get">
+            <input type="text" name="q" value="{SearchQuery}" placeholder="{lang:Search}..." autofocus />
+            <input type="submit" value="Search"/>
+          </form>
+        </div>
+        <div id="about">
+          <div class="img">
+            <img src="https://media.licdn.com/media/p/8/005/0a1/2da/321ee6c.jpg" alt="Profile Image" />
+          </div>
+          <div class="info">
+              Co-founder at <a href="http://craves.io" title="Craves">Craves</a>. Formerly, the Product Manager and Designer for the Mobile team at <a href="http://waveapps.com" title="Wave">Wave</a>. Design, tech, mobile and music geek.
+          </div>
+          <ul class="services">
+            <li>
+              <a href="{text:Facebook Link}" title="View Facebook Profile">
+                <img class="facebook" src="http://static.tumblr.com/0vhitxf/33Tlfrda2/ico-facebook16.png" alt="Facebook icon" />Facebook
+              </a>
+            </li>
+            <li>
+              <a href="{text:Twitter Link}" title="View Twitter Profile">
+                <img class="twitter" src="http://static.tumblr.com/0vhitxf/nZClfrdb6/ico-twitter16.png" alt="Twitter icon" />Twitter
+              </a>
+            </li>
+            <li>
+              <a href="{text:Lastfm Link}"  title="View Last.fm Profile">
+                <img class="lastfm" src="http://static.tumblr.com/0vhitxf/f9mlfrdam/ico-lastfm16.png" alt="Last.fm icon" />Last.fm
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    {block:Pagination}
+    <div class="pagination">
+      {block:PreviousPage}
+      <a href="{PreviousPage}">&#171; Previous</a>
+      {/block:PreviousPage}
+          {block:JumpPagination length="5"}
+      {block:CurrentPage}
+      <a class="current_page">{PageNumber}</a>
+      {/block:CurrentPage}
+      {block:JumpPage}
+      <a class="jump_page" href="{URL}">{PageNumber}</a>
+      {/block:JumpPage}
+          {/block:JumpPagination}
+          {block:NextPage}
+      <a href="{NextPage}">Next &#187;</a>
+      {/block:NextPage}
+    </div>
+    {/block:Pagination}
+    <p>Design by <a href="http://kwerk.ca" rel="me">Scott Cormier</a>. {lang:Powered by Tumblr 2}.</p>
+    <p>Copyright © 1980-2010</p>    
+  </footer>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-	<script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.4.2.min.js"%3E%3C/script%3E'))</script>
-	<script type="text/javascript" src="http://static.tumblr.com/qhhlwkc/Wjnlgw1fp/jquery.fancybox-1.3.4.js"></script>
-	<script type="text/javascript" src="http://static.tumblr.com/qhhlwkc/G3Vlgw18p/jquery.easing-1.3.pack.js"></script>
-	<script type="text/javascript" src="http://static.tumblr.com/qhhlwkc/JyElgw19g/jquery.mousewheel-3.0.4.pack.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.4.2.min.js"%3E%3C/script%3E'))</script>
+  <script type="text/javascript" src="http://static.tumblr.com/qhhlwkc/Wjnlgw1fp/jquery.fancybox-1.3.4.js"></script>
+  <script type="text/javascript" src="http://static.tumblr.com/qhhlwkc/G3Vlgw18p/jquery.easing-1.3.pack.js"></script>
+  <script type="text/javascript" src="http://static.tumblr.com/qhhlwkc/JyElgw19g/jquery.mousewheel-3.0.4.pack.js"></script>
 
-	<!-- scripts concatenated and minified via ant build script-->
-	<!--
-	<script src="http://static.tumblr.com/0vhitxf/3Cylfsx8b/script.js"></script>
-	-->
-	<script src="http://kwerk.ca/_js/script.js"></script>
-	<script>
-		$("#main article footer .notes a").each(function() {
-			var link = $(this).closest("article").find("header .type a").attr("href");
-			$(this).attr("attr", link+"#notes");
-		});
-	</script>
-	<!-- end concatenated and minified scripts-->
-	
-	{block:IfDisqusShortname}
-	<script type="text/javascript">
-	    var disqus_shortname = '{text:Disqus Shortname}';
-	    /* * * DON'T EDIT BELOW THIS LINE * * */
-	    (function () {
-	        var s = document.createElement('script'); s.async = true;
-	        s.type = 'text/javascript';
-	        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-	        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-	    }());
-	</script>
-	{/block:IfDisqusShortname}
-	
-	{block:IfGoogleAnalyticsUACode}
-	<!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
-	     change the UA-XXXXX-X to be your site's ID -->
-	<script>
-		var _gaq = [['_setAccount', '{text:Google Analytics UA Code}'], ['_trackPageview']];
-		(function(d, t) {
-			var g = d.createElement(t),
-			    s = d.getElementsByTagName(t)[0];
-			g.async = true;
-			g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			s.parentNode.insertBefore(g, s);
-		})(document, 'script');
-	</script>
-	{/block:IfGoogleAnalyticsUACode}
+  <!-- scripts concatenated and minified via ant build script-->
+  <!--
+  <script src="http://static.tumblr.com/0vhitxf/3Cylfsx8b/script.js"></script>
+  <script src="http://kwerk.ca/_js/script.js"></script>
+  -->
+  <script src="http://work.scottcormier.com/_js/scripts.js"></script>
+  <script>
+    $("#main article footer .notes a").each(function() {
+      var link = $(this).closest("article").find("header .type a").attr("href");
+      $(this).attr("attr", link+"#notes");
+    });
+  </script>
+  <!-- end concatenated and minified scripts-->
+  
+  {block:IfDisqusShortname}
+  <script type="text/javascript">
+      var disqus_shortname = '{text:Disqus Shortname}';
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function () {
+          var s = document.createElement('script'); s.async = true;
+          s.type = 'text/javascript';
+          s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+  </script>
+  {/block:IfDisqusShortname}
 </body>
 </html>
