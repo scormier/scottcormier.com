@@ -64,7 +64,6 @@
           <p class="intro">Hello! I'm Scott Cormier, a product and growth leader based in Calgary, Alberta. </p>
           <p>I love problems. I love learning about them, thinking about them, generating hypotheses on how to solve them, and running experiments to test those hypotheses. I love learning how people interact with the solutions to these problems and seeing how they're helped by them.</p>
           <p>I'm an outcome-driven product leader who helps early-stage startups get to product-market fit and grow their businesses through strong strategic thinking, design, and consumer science skills.</p>
-          <p><a href="/" id="mp-test">click</a></p>
         </article>
       </div>
     </div>
@@ -72,16 +71,17 @@
 
   <footer>
     <p>Design by <a href="http://scottcormier.com" rel="me">Scott Cormier</a>.</p>
-      <p>You should follow me on <a href="http://twitter.com/scormier" title="Follow Me on Twitter">Twitter</a></p>
+    <p>You should follow me on <a href="http://twitter.com/scormier" title="Follow Me on Twitter">Twitter</a></p>
     <p>Copyright © 2020</p>
+    <p><a href="/" id="mp-test">click</a></p>
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="_js/script.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-      console.log("HI");
       $("#mp-test").click(function(){
+        console.log("hey");
         mixpanel.track("Page Viewed");
       });
     });
