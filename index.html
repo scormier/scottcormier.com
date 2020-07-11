@@ -82,7 +82,10 @@
     $(document).ready(function() {
       $("#mp-test").click(function(){
         console.log("hey");
-        mixpanel.track("Page Viewed");
+        mixpanel.track(
+          "Played song",
+          {"genre": "hip-hop"}
+        );
       });
     });
   </script>
